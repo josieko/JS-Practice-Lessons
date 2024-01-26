@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      displayCartQtt();
+    "
+    >
+      Show Quantity
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(1);
+    "
+    >
+      Add to Cart
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(2);
+    "
+    >
+      +2
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(3);
+    "
+    >
+      +3
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(4);
+    "
+    >
+      +4
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(5);
+    "
+    >
+      +5
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(-1);
+    "
+    >
+      Remove from cart
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(-2);
+    "
+    >
+      -2
+    </button>
+
+    <button
+      onclick="
+      updateCartQuantity(-3);
+    "
+    >
+      -3
+    </button>
+
+    <button
+      onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      displayCartQtt();
+    "
+    >
+      Reset Cart
+    </button>
+
+    <p class="js-qt-display"></p>
+
+    <script>
+      let cartQuantity = 0;
+
+      displayCartQtt();
+
+      function updateCartQuantity(change) {
+        if (cartQuantity + change > 10) {
+          alert("The cart is full");
+          return;
+        }
+
+        if (cartQuantity + change < 0) {
+          alert("Not enough items in the cart");
+          return;
+        }
+
+        cartQuantity += change;
+        displayCartQtt();
+      }
+
+      function displayCartQtt() {
+        document.querySelector(
+          ".js-qt-display"
+        ).innerHTML = `Current quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
+</html>
