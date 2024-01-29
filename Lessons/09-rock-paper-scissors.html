@@ -5,15 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
   </head>
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+      color: white;
+      font-family: arial;
+      margin-left: 30px;
+    }
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .move-icon {
+      height: 50px;
+    }
+
+    .move-button {
+      background-color: transparent;
+      border: 3px solid white;
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .result {
+      font-size: 25px;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+
+    .score {
+      margin-top: 60px;
+    }
+
+    .reset-score-button {
+      background-color: white;
+      border: none;
+      font-size: 15px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  </style>
   <body>
-    <p>Rock Paper Scissors</p>
+    <p class="title">Rock Paper Scissors</p>
     <button
       onclick="
       playGame('rock');
       updateScoreElement();
     "
+      class="move-button"
     >
-      Rock
+      <img src="/assets/Rock-Emoji.png" class="move-icon" />
     </button>
 
     <button
@@ -21,23 +66,24 @@
       playGame('paper');
       updateScoreElement();
     "
+      class="move-button"
     >
-      Paper
+      <img src="/assets/Paper-Emoji.png" class="move-icon" />
     </button>
 
     <button
       onclick="
       playGame('scissors');
       updateScoreElement();
-      
     "
+      class="move-button"
     >
-      Scissors
+      <img src="/assets/Scissors-Emoji.png" class="move-icon" />
     </button>
 
-    <p class="js-result"></p>
+    <p class="js-result result"></p>
     <p class="js-moves"></p>
-    <p class="js-score"></p>
+    <p class="js-score score"></p>
 
     <button
       onclick="
@@ -47,6 +93,7 @@
     localStorage.removeItem('score');
     updateScoreElement();
     "
+      class="reset-score-button"
     >
       Reset Score
     </button>
@@ -112,7 +159,8 @@
 
         document.querySelector(
           ".js-moves"
-        ).innerHTML = `You ${playerMove} - Computer ${computerMove}`;
+        ).innerHTML = `You <img src="/assets/${playerMove}-Emoji.png" class="move-icon" />
+      <img src="/assets/${computerMove}-Emoji.png" class="move-icon" /> Computer`;
       }
 
       function updateScoreElement() {
