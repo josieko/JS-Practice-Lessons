@@ -34,6 +34,29 @@
         padding: 12px 14px;
         margin-left: 10px;
       }
+
+      .js-button,
+      .js-button-2,
+      .js-button-3 {
+        border: none;
+        font-size: 12px;
+        font-weight: bold;
+        color: black;
+        border-radius: 5px;
+        background-color: rgb(230, 230, 230);
+        padding: 12px 14px;
+        margin-top: 10px;
+      }
+
+      .is-toggled {
+        border: none;
+        font-weight: bold;
+        font-size: 12px;
+        color: white;
+        border-radius: 5px;
+        background-color: black;
+        padding: 12px 14px;
+      }
     </style>
   </head>
   <body>
@@ -43,5 +66,50 @@
       <button class="uber-request">Request now</button>
       <button class="uber-schedule">Schedule for later</button>
     </div>
+
+    <button
+      class="toggle-button js-button"
+      onclick="
+      toggleButton('.js-button');
+    "
+    >
+      Gaming
+    </button>
+
+    <button
+      class="toggle-button js-button-2"
+      onclick="
+      toggleButton('.js-button-2');
+    "
+    >
+      Music
+    </button>
+
+    <button
+      class="toggle-button js-button-3"
+      onclick="
+      toggleButton('.js-button-3');
+    "
+    >
+      Tech
+    </button>
+    <script>
+      function toggleButton(selector) {
+        const button = document.querySelector(selector);
+        if (!button.classList.contains("is-toggled")) {
+          turnOffPreviousButton();
+          button.classList.add("is-toggled");
+        } else {
+          button.classList.remove("is-toggled");
+        }
+      }
+
+      function turnOffPreviousButton() {
+        const previousButton = document.querySelector(".is-toggled");
+        if (previousButton) {
+          previousButton.classList.remove("is-toggled");
+        }
+      }
+    </script>
   </body>
 </html>
