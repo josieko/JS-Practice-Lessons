@@ -1,0 +1,37 @@
+body {
+  background-color: black;
+  font-family: Arial;
+}
+
+.js-calculation {
+  color: white;
+  font-size: 45px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.number,
+.orange-sign,
+.grey-sign {
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  font-size: 26px;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.orange-sign {
+  background-color: rgb(254, 160, 10);
+  color: white;
+}
+
+.number {
+  color: white;
+  background-color: rgb(51, 51, 51);
+}
+
+.grey-sign {
+  background-color: #a5a5a5;
+}
