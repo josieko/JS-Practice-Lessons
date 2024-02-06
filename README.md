@@ -3,7 +3,6 @@
 Practising JavaScript basic concepts through lessons and extra exercises 👩🏼‍💻
 
 # Latest update
-Added CSS to the Rock Papaer Scissors game
+Made a simplified version of the Apple calculator 🍎
 
-![image](https://github.com/josieko/JS-Practice-Lessons/assets/122826085/d46eb055-097a-4e0d-bedf-e172542058e4)
-
+![image](https://github.com/josieko/JS-Practice-Lessons/assets/122826085/3eb9887c-f188-418b-b041-579caefae861)
